@@ -1,0 +1,16 @@
+<.header>
+  Login <%= @login.id %>
+  <:subtitle>This is a login record from your database.</:subtitle>
+  <:actions>
+    <.link href={~p"/logins/#{@login}/edit"}>
+      <.button>Edit login</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Email"><%= @login.email %></:item>
+  <:item title="Password"><%= @login.password %></:item>
+</.list>
+
+<.back navigate={~p"/logins"}>Back to logins</.back>

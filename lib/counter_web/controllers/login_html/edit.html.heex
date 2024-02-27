@@ -1,0 +1,8 @@
+<.header>
+  Edit Login <%= @login.id %>
+  <:subtitle>Use this form to manage login records in your database.</:subtitle>
+</.header>
+
+<.login_form changeset={@changeset} action={~p"/logins/#{@login}"} />
+
+<.back navigate={~p"/logins"}>Back to logins</.back>

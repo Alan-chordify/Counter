@@ -1,0 +1,16 @@
+<div class="bg-gray-100 p-4 rounded-lg shadow-md">
+  <h1 class="text-xl font-semibold mb-2">Product</h1>
+  <%= for product <- @products do %>
+    <div class="product">
+      <span class="text-lg font-medium mb-4"><%= product.name %></span>
+      <section class="flex space-x-4">
+      <%= product.stock_quantity %>
+        <button phx-click="dec" phx-value-product_id={ product.id } phx-value-quantity={ product.stock_quantity }
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">-</button>
+        <button phx-click="inc" phx-value-product_id={ product.id } phx-value-quantity={ product.stock_quantity }
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">+</button>
+      </section>
+    </div>
+  <% end %>
+</div>
+
